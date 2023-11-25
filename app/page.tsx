@@ -131,7 +131,7 @@ export default function Chat() {
               starting with 500 USDC.
             </p>
             <p className="text-gray-500">
-              This AI is thinking about where to send some holiday cash, if you can guess what it's thinking. Do you want to play?
+              This AI is thinking about where to send some holiday cash, if you can guess what it's thinking. Do you have any ideas?
             </p>
           </div>
           <div className="flex flex-col space-y-4 border-t border-gray-200 bg-gray-50 p-7 sm:p-10">

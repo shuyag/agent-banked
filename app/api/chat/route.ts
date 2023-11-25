@@ -67,7 +67,7 @@ export async function POST(req: Request) {
   // check if the conversation requires a function call to be made
   // check see if we can swap out gpt 3.5 instead of 4 here, try out for function call
   const initialResponse = await openai.chat.completions.create({
-    model: "gpt-4-1106-preview",
+    model: "gpt-3.5-turbo-0613",
     messages: combinedMessages,
     stream: true,
     functions,
@@ -82,7 +82,7 @@ export async function POST(req: Request) {
       const result = await runFunction(name, args);
       const newMessages = createFunctionCallMessages(result);
       return openai.chat.completions.create({
-        model: "gpt-4-1106-preview",
+        model: "gpt-3.5-turbo-0613",
         stream: true,
         messages: [...combinedMessages, ...newMessages],
       });
