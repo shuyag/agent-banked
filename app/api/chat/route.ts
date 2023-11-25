@@ -12,7 +12,7 @@ const openai = new OpenAI({
 export const runtime = "edge";
 
 export async function POST(req: Request) {
- // could get rid of KV and rate limit
+
   if (
     process.env.NODE_ENV !== "development" &&
     process.env.KV_REST_API_URL &&
@@ -65,9 +65,8 @@ export async function POST(req: Request) {
   const combinedMessages = [context, ...messages];
 
   // check if the conversation requires a function call to be made
-  // check see if we can swap out gpt 3.5 instead of 4 here, try out for function call
   const initialResponse = await openai.chat.completions.create({
-    model: "gpt-3.5-turbo-0613",
+    model: "gpt-4-1106-preview",
     messages: combinedMessages,
     stream: true,
     functions,
@@ -82,7 +81,7 @@ export async function POST(req: Request) {
       const result = await runFunction(name, args);
       const newMessages = createFunctionCallMessages(result);
       return openai.chat.completions.create({
-        model: "gpt-3.5-turbo-0613",
+        model: "gpt-4-1106-preview",
         stream: true,
         messages: [...combinedMessages, ...newMessages],
       });

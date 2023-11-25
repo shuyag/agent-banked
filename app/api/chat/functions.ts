@@ -16,24 +16,21 @@ export const functions: CompletionCreateParams.Function[] = [
       required: ["address"],
     },
   },
-// if trying to check for an NFT, pull from Alchemy, would have to add here, this is the schema for when to call a function, and read if in a given wallet
 ];
 
 async function do_good(address: string) {
 
   const requestBody = {
     projectId: `${process.env.PROJECT_ID}`,
-    contractAddress: '0xfc0Bdd53ABe86d68B3fEe179999365A14FcF3870',
+    contractAddress: '0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913',
     chainId: 8453,
     functionSignature: 'transferFrom(address from, address to, uint256 value)',
     args: {
       from: '0x0F71d6FDd73f0E80AA6057c11Ca413bE06A7d1Fe',
       to: address,
-      value: 1000000,
+      value: 3000000,
     }
   };
-
-
 
   // Sent the API request and return the response based on the status code
   try {

@@ -121,7 +121,7 @@ export default function Chat() {
               </a>{" "}
               to autonomously manage{" "}
               <a
-                href="https://basescan.org/address/0xfc0Bdd53ABe86d68B3fEe179999365A14FcF3870"
+                href="https://basescan.org/address/0x0F71d6FDd73f0E80AA6057c11Ca413bE06A7d1Fe"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-medium underline underline-offset-4 transition-colors hover:text-black"
@@ -131,7 +131,7 @@ export default function Chat() {
               starting with 500 USDC.
             </p>
             <p className="text-gray-500">
-              This AI is thinking about where to send some holiday cash, if you can guess what it's thinking. Do you have any ideas?
+              This AI Agent is thinking about how to best use its capital. Do you have any ideas?
             </p>
           </div>
           <div className="flex flex-col space-y-4 border-t border-gray-200 bg-gray-50 p-7 sm:p-10">
