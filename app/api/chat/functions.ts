@@ -16,6 +16,24 @@ export const functions: CompletionCreateParams.Function[] = [
       required: ["address"],
     },
   },
+// if trying to check for an NFT, pull from Alchemy, would have to add here, this is the schema for when to call a function, and read if in a given wallet
+  {
+    name: "something_special", //change to "is it there", basically taking in address of user, see if the prompt in route.ts can ask for wallet address, and see if it can check if there's something in the wallet, and call this function
+    description:
+      "Do something special.", //might look like do_good function, and change to check wallet function, use Alchemy to check. (Alchemy NFT API)
+    parameters: {
+      type: "object",
+      properties: {
+        address: {
+          type: "string",
+          description: "The address",
+        },
+      },
+      required: ["address"],
+    },
+  },
+
+
 ];
 
 async function do_good(address: string) {
@@ -31,6 +49,8 @@ async function do_good(address: string) {
       value: 3000000,
     }
   };
+
+
 
   // Sent the API request and return the response based on the status code
   try {
